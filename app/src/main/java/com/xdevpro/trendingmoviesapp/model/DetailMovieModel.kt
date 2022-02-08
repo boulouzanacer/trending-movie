@@ -4,7 +4,7 @@ package com.xdevpro.trendingmoviesapp.model
 data class DetailMovieModel(
     val adult: Boolean,
     val backdrop_path: String,
-    val budget : Double,
+    val budget : Float,
     val homepage: String,
     val original_language : String,
     val original_title:String,

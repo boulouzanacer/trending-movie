@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Trending movies</string>
+    <string name="production_companies">PRODUCTION COMPANIES</string>
 </resources>

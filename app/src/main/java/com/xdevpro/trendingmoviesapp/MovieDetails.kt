@@ -66,8 +66,8 @@ class MovieDetails : AppCompatActivity() {
 
             binding.tvTitle.text = it.original_title
             binding.tvReleaseDate.text = it.release_date
-            binding.tvVotesCount.text = it.vote_count.toString()
-            binding.ratingBar.rating = 4.3F
+            binding.tvBudget.text = "Budget : " + it.budget.toString() + " $"
+            binding.ratingBar.rating = (it.vote_average.toFloat() * 5) / 10
             binding.tvPlot.text = it.overview
             Glide.with(baseContext).load(BASE_URL+ ImageType+it.poster_path).into(binding.imgPoster) // Using Glide Library for fetching Network Image
 
