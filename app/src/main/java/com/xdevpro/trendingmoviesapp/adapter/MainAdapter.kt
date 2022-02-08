@@ -35,7 +35,8 @@ class MainAdapter constructor(val mItemClickListener:ItemClickListener): Recycle
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val movie = movies[position]
         holder.binding.title.text = movie.title
-        holder.binding.rating.text = movie.vote_average.toString()
+        holder.binding.rating.text = "Vote average : " + movie.vote_average.toString()
+        holder.binding.originalLanguage.text = "Original language : "+ movie.original_language
         holder.binding.releaseYear.text = movie.release_date
         Glide.with(holder.itemView.context).load(BASE_URL+ ImageType+movie.poster_path).into(holder.binding.thumbnail) // Using Glide Library for fetching Network Image
 

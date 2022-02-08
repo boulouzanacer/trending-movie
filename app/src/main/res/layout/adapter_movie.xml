@@ -40,7 +40,7 @@
 
         <!-- Genre -->
         <TextView
-            android:id="@+id/genre"
+            android:id="@+id/original_language"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/rating"
