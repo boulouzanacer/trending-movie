@@ -66,10 +66,11 @@ class MovieDetails : AppCompatActivity() {
 
             binding.tvTitle.text = it.original_title
             binding.tvReleaseDate.text = resources.getString(R.string.released_in).plus(it.release_date)
-            binding.tvStatus.text = resources.getString(R.string.status).plus(it.status)
-            binding.tvBudget.text = resources.getString(R.string.budget).plus(it.budget.toString()).plus(resources.getString(R.string.dollar))
+            binding.tvPopularity.text = resources.getString(R.string.popularity).plus(" "+ it.popularity)
+            binding.tvBudget.text = resources.getString(R.string.budget).plus(" " +it.budget.toString()+ " ").plus(resources.getString(R.string.dollar))
             binding.tvRating.text = it.vote_average.toString()
             binding.ratingBar.rating = (it.vote_average.toFloat() * 5) / 10
+            //--------------------
             var geners = ""
             var i = 0
             while (it.genres.size > i){
@@ -77,6 +78,24 @@ class MovieDetails : AppCompatActivity() {
                 i++
             }
             binding.tvMovieGenres.text = resources.getString(R.string.generes).plus(geners)
+            //---------------------
+            var prod_countries = ""
+            i = 0
+            while (it.production_countries.size > i){
+                prod_countries = prod_countries.plus( " "+it.production_countries[i].name + " /")
+                i++
+            }
+            binding.tvProductionCount.text = resources.getString(R.string.production_countries).plus(prod_countries)
+            //---------------------
+            var spoken_languages = ""
+            i = 0
+            while (it.spoken_languages.size > i){
+                spoken_languages = spoken_languages.plus( " "+it.spoken_languages[i].english_name + " /")
+                i++
+            }
+            binding.tvSpokenLang.text = resources.getString(R.string.spoken_languages).plus(spoken_languages)
+            //---------------------
+
             binding.tvPlot.text = it.overview
             Glide.with(baseContext).load(BASE_URL+ ImageType+it.poster_path).into(binding.imgPoster) // Using Glide Library for fetching Network Image
 

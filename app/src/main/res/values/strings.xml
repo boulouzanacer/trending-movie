@@ -7,5 +7,7 @@
     <string name="budget">Budget : </string>
     <string name="dollar"> $</string>
     <string name="generes"> Movie generes : </string>
-    <string name="status"> Status : </string>
+    <string name="production_countries"> Production countries : </string>
+    <string name="spoken_languages">  Spoken languages : </string>
+    <string name="popularity"> Popularity : </string>
 </resources>

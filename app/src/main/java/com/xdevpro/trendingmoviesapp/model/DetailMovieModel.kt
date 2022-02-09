@@ -17,5 +17,7 @@ data class DetailMovieModel(
     val vote_average: Double,
     val vote_count: Double,
     val production_companies: List<Production_companyModel>,
-    val genres: List<GenresModel>
+    val genres: List<GenresModel>,
+    val production_countries: List<Production_countriesModel>,
+    val spoken_languages: List<Spoken_languagesModel>
 )

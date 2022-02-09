@@ -51,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_status"
+            android:id="@+id/tv_popularity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view_margin"
@@ -67,7 +67,7 @@
             android:layout_marginTop="@dimen/view_margin"
             android:textColor="@color/orange_dark"
             app:layout_constraintStart_toStartOf="@+id/tv_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_popularity" />
 
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/rating_bar"
@@ -80,7 +80,7 @@
             android:numStars="5"
             android:stepSize="0.1"
             app:layout_constraintStart_toEndOf="@+id/tv_rating"
-            app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_popularity" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_budget"
@@ -105,6 +105,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_poster" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_production_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_layout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_movie_genres" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_spoken_lang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_layout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_production_count" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_plot"
@@ -116,7 +140,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_movie_genres" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_spoken_lang" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_production_com"
