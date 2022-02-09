@@ -36,7 +36,8 @@ class MovieDetails : AppCompatActivity() {
         binding = ActivityMovieDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var movie_id : String = intent.getStringExtra("movie_id").toString()
+        val movie_id : String = intent.getStringExtra("movie_id").toString()
+        val movie_name : String = intent.getStringExtra("movie_name").toString()
 
         val recyclerView = binding.recyclerTrailer
         ProductionAdapter = ProductionComAdapter()
@@ -48,7 +49,7 @@ class MovieDetails : AppCompatActivity() {
 
 
         supportActionBar?.apply {
-            title = "Movie detail"
+            title = movie_name
             // show back button on toolbar
             // on back button press, it will navigate to parent activity
             setDisplayHomeAsUpEnabled(true)
@@ -63,11 +64,19 @@ class MovieDetails : AppCompatActivity() {
         viewModel.movieDetail.observe(this, Observer {
             Log.d(TAG, "onCreate:" + it.homepage)
 
-
             binding.tvTitle.text = it.original_title
-            binding.tvReleaseDate.text = it.release_date
-            binding.tvBudget.text = "Budget : " + it.budget.toString() + " $"
+            binding.tvReleaseDate.text = resources.getString(R.string.released_in).plus(it.release_date)
+            binding.tvStatus.text = resources.getString(R.string.status).plus(it.status)
+            binding.tvBudget.text = resources.getString(R.string.budget).plus(it.budget.toString()).plus(resources.getString(R.string.dollar))
+            binding.tvRating.text = it.vote_average.toString()
             binding.ratingBar.rating = (it.vote_average.toFloat() * 5) / 10
+            var geners = ""
+            var i = 0
+            while (it.genres.size > i){
+                geners = geners.plus( " "+it.genres[i].name + " /")
+                i++
+            }
+            binding.tvMovieGenres.text = resources.getString(R.string.generes).plus(geners)
             binding.tvPlot.text = it.overview
             Glide.with(baseContext).load(BASE_URL+ ImageType+it.poster_path).into(binding.imgPoster) // Using Glide Library for fetching Network Image
 

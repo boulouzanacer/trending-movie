@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity(), MainAdapter.ItemClickListener{
         Log.v("NASSER", movie.id.toString())
         val intent = Intent(this, MovieDetails::class.java)
         intent.putExtra("movie_id", movie.id.toString())
+        intent.putExtra("movie_name", movie.title)
         startActivity(intent)
         this.overridePendingTransition(R.anim.animation_enter,
             R.anim.animation_leave);

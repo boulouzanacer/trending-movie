@@ -26,7 +26,7 @@
             android:scaleType="fitXY"
             app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/img_like"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_budget"
             app:layout_constraintTop_toTopOf="@id/tv_title" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -51,44 +51,59 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_votes_count"
+            android:id="@+id/tv_status"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view_margin"
-            android:textColor="@color/orange_dark"
+            android:textColor="@color/teal_200"
             app:layout_constraintEnd_toEndOf="@+id/tv_title"
             app:layout_constraintStart_toStartOf="@+id/tv_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_release_date" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_budget"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_rating"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view_margin"
             android:textColor="@color/orange_dark"
             app:layout_constraintStart_toStartOf="@+id/tv_title"
-            app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_status" />
 
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/rating_bar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_margin"
             android:layout_marginTop="@dimen/view_margin"
             android:isIndicator="true"
             android:numStars="5"
             android:stepSize="0.1"
-            app:layout_constraintStart_toStartOf="@+id/tv_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_votes_count" />
+            app:layout_constraintStart_toEndOf="@+id/tv_rating"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_like"
-            android:layout_width="@dimen/fav_icon_dimen"
-            android:layout_height="@dimen/fav_icon_dimen"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_budget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_200"
             android:layout_marginTop="@dimen/view_margin"
-            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
             app:layout_constraintStart_toStartOf="@+id/tv_title"
             app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_movie_genres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_layout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_poster" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -101,19 +116,19 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_poster" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_movie_genres" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_production_com"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_layout"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@color/colorAccent"
+            android:layout_marginTop="20dp"
             android:text="@string/production_companies"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/purple_200"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_plot" />
 
@@ -133,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/padding_layout"
+            android:layout_marginTop="@dimen/view_margin"
             android:layout_marginBottom="@dimen/padding_layout"
             android:nestedScrollingEnabled="false"
             android:padding="@dimen/view_margin"

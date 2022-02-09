@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Trending movies</string>
-    <string name="production_companies">PRODUCTION COMPANIES</string>
+    <string name="production_companies">PRODUCTION COMPANIES : </string>
+
+
+    <string name="released_in">Released in : </string>
+    <string name="budget">Budget : </string>
+    <string name="dollar"> $</string>
+    <string name="generes"> Movie generes : </string>
+    <string name="status"> Status : </string>
 </resources>
