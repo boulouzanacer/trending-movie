@@ -4,16 +4,18 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 interface RetrofitService {
 
-    @GET("3/discover/movie?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3")
-    fun getAllMovies() : Call<ResponseModel>
+    @GET("3/discover/movie")
+    fun getAllMovies(@Query("api_key")  key: String) : Call<ResponseModel>
 
-    @GET("3/movie/{movie_id}?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3")
-    fun getMovieDetail(@Path("movie_id") movie_id: String?): Call<DetailMovieModel>
+    @GET("3/movie/{movie_id}")
+    fun getMovieDetail(@Path("movie_id") movie_id: String, @Query("api_key")  key: String): Call<DetailMovieModel>
 
     companion object {
 
